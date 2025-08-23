@@ -1,0 +1,80 @@
+:root {
+    font-size: 20px;
+    font-display: swap;
+}
+
+body {
+    margin: auto;
+    margin-top: 2rem;
+    max-width: 1200px;
+
+    background-color: hsl(135, 50%, 98%);
+    
+    font-family: "Zilla Slab", serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: hsl(0, 0%, 20%);
+}
+
+header, main {
+    padding-inline: max(1rem, 8vw);
+}
+
+h1 {
+    font-family: "Rubik Doodle Shadow", cursive;
+    font-size: 3rem;
+    letter-spacing: 2px;
+
+    line-height: .9;
+
+    margin-block-start: 2rem;
+    margin-block-end: .5rem;
+
+    text-wrap: balance;
+}
+
+h2 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    color: hsl(129, 27%, 35%);
+}
+
+header {
+    margin-block: 5rem;
+}
+
+a {
+    font-family: "Kalam", cursive;
+
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+
+    text-decoration-color: hsl(129, 27%, 35%);
+    color: hsl(0, 0%, 20%);
+
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        color: hsl(129, 27%, 35%);
+    }
+
+    &:active {
+        background-color: hsl(129, 27%, 35%);
+        color: white;
+        text-decoration-color: white;
+    }
+}
+
+ol, ul {
+    padding-inline: 1rem;
+    padding-left: 2rem;
+}
+
+i {
+    font-family: "Kalam", cursive;
+}
+
+p {
+    margin-block: 1.5rem;
+}

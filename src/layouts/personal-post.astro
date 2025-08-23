@@ -1,0 +1,32 @@
+---
+import formatDate from "../format-date";
+import Layout from "./personal.astro";
+
+export interface Props {
+    title: string;
+    publishedAt: Date | undefined;
+    publishedBy: string | undefined;
+}
+
+const {
+    title,
+    publishedAt,
+    publishedBy
+} = Astro.props;
+
+let heading = "";
+if (publishedAt) heading += formatDate(publishedAt);
+if (publishedAt && publishedBy) heading += `, `;
+if (publishedBy) heading += publishedBy;
+---
+
+<Layout title={title}>
+    <header>
+        <a href="/personal">Powrót</a>
+        <h1>{title}</h1>
+        {heading && <h2>{heading}</h2>}
+    </header>
+    <main>
+        <slot />
+    </main>
+</Layout>

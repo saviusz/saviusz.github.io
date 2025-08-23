@@ -1,0 +1,32 @@
+---
+
+import { getCollection } from "astro:content";
+import "../../personal.scss";
+
+import Layout from "../../layouts/personal.astro";
+import formatDate from "../../format-date";
+
+const allPosts = await getCollection("privateBlogPosts");
+
+---
+<Layout title="Saviusz">
+        <header>
+            <h1>Saviusz</h1>
+            <h2>Mój prywatny blog</h2>
+        </header>
+        <main>
+            <h2>Ostatnie wpisy:</h2>
+            <ul>
+                {
+                    allPosts.map((post) => <li>
+                        <a
+                        href={`/personal/${post.id}`}
+                        >
+                            {post.data.title}
+                        </a>
+                        {post.data.publishedAt && <>- {formatDate(post.data.publishedAt)}</>}
+                    </li>)
+                }
+            </ul>
+        </main>
+</Layout>
